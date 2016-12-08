@@ -4,18 +4,19 @@ const BoilerplateProvider = require('../src/index');
 
 describe('BoilerplateProvider', () => {
 
-  it('the BoilerplateProvider should exist', () => {
+  it('should exists', () => {
     should(BoilerplateProvider).not.be.null;
   });
 
   describe('init', () => {
-    it('the init method should be defined', () => {
+    it('should be defined and be a function', () => {
       should(BoilerplateProvider.init).not.be.null;
+      should(BoilerplateProvider.init).be.a.Function;
     });
   });
 
   describe('init()', () => {
-    it('the init method should throw an error if no argument are passed', () => {
+    it('should throw an error if no argument are passed', () => {
       should(BoilerplateProvider.init).throw(Error);
     });
   });
@@ -33,13 +34,11 @@ describe('BoilerplateProvider', () => {
   });
 
   describe('init(httpServer, config)', () => {
-    it('should throw an error because httpServer and config are not good types', () => {
+    it('should not throw an error when httpServer and config are both defined', () => {
       const httpServer = { hapi: { route: () => {} } };
       const config = { get: () => {}, set: () => {} };
-      const init = BoilerplateProvider.init.bind(null, httpServer, config);
-      init();
 
-      should(init).not.throw(Error);
+      should(BoilerplateProvider.init.bind(null, httpServer, config)).not.throw(Error);
     });
   });
 
