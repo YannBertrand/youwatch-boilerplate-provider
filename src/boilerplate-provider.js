@@ -1,25 +1,60 @@
-const _ = require('lodash');
+const utils = require('./utils');
 
 module.exports = (() => {
 
-  let httpServer;
   let config;
 
-  function init(_config, callback) {
-    if (!_.isObject(_config)) {
-      throw new TypeError('config must be defined and be object');
-    }
-    if (!_.isFunction(callback)) {
-      throw new TypeError('callback must be defined and be a function')
-    }
+  function init(callback, _config) {
+    utils.testCallback(callback);
+    utils.returnCallbackError(utils.testObject('config', _config));
 
     config = _config;
 
     return callback();
   }
 
+  function refreshSubscriptions(callback) {
+    utils.testCallback(callback);
+
+    return callback();
+  }
+
+  function refreshVideos(callback, channel) {
+    utils.testCallback(callback);
+    utils.returnCallbackError(utils.testOptionalObject('channel', channel));
+
+    return callback(null, []);
+  }
+
+  function getVideos(callback, channel) {
+    utils.testCallback(callback);
+    utils.returnCallbackError(utils.testOptionalObject('channel', channel));
+
+    return callback(null, []);
+  }
+
+  function getOlderVideos(callback, video) {
+    utils.testCallback(callback);
+    utils.returnCallbackError(utils.testOptionalObject('video', video));
+
+    return callback(null, []);
+  }
+
+  function videoProgress(callback, video, time) {
+    utils.testCallback(callback);
+    utils.returnCallbackError(utils.testObject('video', video));
+    utils.returnCallbackError(utils.testString('time', time));
+
+    return callback();
+  }
+
   return {
-    init
+    init,
+    refreshSubscriptions,
+    refreshVideos,
+    getVideos,
+    getOlderVideos,
+    videoProgress,
   };
 
 })();
