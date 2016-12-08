@@ -1,0 +1,24 @@
+{
+  "name": "youwatch-boilerplate-provider",
+  "version": "0.0.1",
+  "description": "A YouWatch boilerplate provider",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YannBertrand/youwatch-boilerplate-provider.git"
+  },
+  "keywords": [
+    "youwatch",
+    "boilerplate",
+    "provider"
+  ],
+  "author": "Yann Bertrand <github@yann-bertrand.fr>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/YannBertrand/youwatch-boilerplate-provider/issues"
+  },
+  "homepage": "https://github.com/YannBertrand/youwatch-boilerplate-provider#readme"
+}
