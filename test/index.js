@@ -21,24 +21,11 @@ describe('BoilerplateProvider', () => {
     });
   });
 
-  describe('init({})', () => {
-    it('should throw an error because config is not defined', () => {
-      should(BoilerplateProvider.init.bind(null, {})).throw(Error);
-    });
-  });
-
-  describe('init(null, {})', () => {
-    it('should throw an error because httpServer is not defined', () => {
-      should(BoilerplateProvider.init.bind(null, null, {})).throw(Error);
-    });
-  });
-
-  describe('init(httpServer, config)', () => {
-    it('should not throw an error when httpServer and config are both defined', () => {
-      const httpServer = { hapi: { route: () => {} } };
+  describe('init(config, callback)', () => {
+    it('should not throw an error when config and callback is defined', () => {
       const config = { get: () => {}, set: () => {} };
 
-      should(BoilerplateProvider.init.bind(null, httpServer, config)).not.throw(Error);
+      should(BoilerplateProvider.init.bind(null, config, () => {})).not.throw;
     });
   });
 

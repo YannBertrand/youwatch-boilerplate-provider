@@ -5,21 +5,17 @@ module.exports = (() => {
   let httpServer;
   let config;
 
-  function init(_httpServer, _config, callback) {
-    if (!_.isObject(_httpServer) || !_.isObject(_config)) {
-      throw new TypeError();
+  function init(_config, callback) {
+    if (!_.isObject(_config)) {
+      throw new TypeError('config must be defined and be object');
+    }
+    if (!_.isFunction(callback)) {
+      throw new TypeError('callback must be defined and be a function')
     }
 
-    httpServer = _httpServer;
     config = _config;
 
-    httpServer.hapi.route({
-      method: 'GET',
-      path: '/provider/callback',
-      handler: (request, reply) => {
-        return reply.file(require('path').join('client/authenticated.html'));
-      },
-    })
+    return callback();
   }
 
   return {
