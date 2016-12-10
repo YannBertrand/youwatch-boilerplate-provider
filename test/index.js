@@ -24,6 +24,22 @@ describe('Provider', () => {
     });
   });
 
+  describe('#getConfigPrefix', () => {
+    it('should be defined and be a function', () => {
+      should(Provider.getConfigPrefix).not.be.null;
+      should(Provider.getConfigPrefix).be.a.Function;
+    });
+
+    describe('#getConfigPrefix()', () => {
+      it('should be sync return a string', () => {
+        const name = Provider.getConfigPrefix();
+
+        should(name).be.a.string;
+        should(name).startWith('providers.');
+      });
+    });
+  });
+
   describe('#init', () => {
     it('should be defined and be a function', () => {
       should(Provider.init).not.be.null;
@@ -40,8 +56,13 @@ describe('Provider', () => {
       it('should call the callback when arguments are present', (done) => {
         const options = {
           config: {
-            get: () => {}, set: () => {}
-          }
+            has: () => {},
+            get: () => {},
+            set: () => {},
+          },
+          app: {
+            getPath: () => {},
+          },
         };
 
         Provider.init(done, options);

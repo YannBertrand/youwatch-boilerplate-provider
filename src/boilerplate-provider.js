@@ -2,18 +2,23 @@ const utils = require('./utils');
 
 module.exports = (() => {
 
-  let config;
-
-  function getName() {
-    return 'boilerplate';
-  }
+  function getName() { return 'boilerplate'; }
+  function getConfigPrefix() { return 'providers.' + getName(); }
 
   function init(callback, options) {
     utils.testCallback(callback);
     utils.returnCallbackError(utils.testObject('options', options));
-    utils.returnCallbackError(utils.testObject('options.config', options.config));
+    utils.returnCallbackError(utils.testFunction('options.config.has', options.config.has));
+    utils.returnCallbackError(utils.testFunction('options.config.get', options.config.get));
+    utils.returnCallbackError(utils.testFunction('options.config.set', options.config.set));
+    utils.returnCallbackError(utils.testFunction('options.app', options.app.getPath));
 
-    config = options.config;
+    if (!options.config.has(getConfigPrefix())) {
+      // Overload this empty object if you want to add default parameters
+      options.config.set(getConfigPrefix(), {});
+    }
+
+    // You can now retrieve config parameters and store them
 
     return callback();
   }
@@ -55,6 +60,7 @@ module.exports = (() => {
 
   return {
     getName,
+    getConfigPrefix,
     init,
     refreshSubscriptions,
     refreshVideos,
