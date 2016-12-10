@@ -16,7 +16,10 @@ describe('Provider', () => {
 
     describe('#getName()', () => {
       it('should be sync return a string', () => {
-        should(Provider.getName()).be.a.string;
+        const name = Provider.getName();
+
+        should(name).be.a.string;
+        should(name).not.containEql('.');
       });
     });
   });
