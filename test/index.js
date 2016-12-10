@@ -8,6 +8,19 @@ describe('Provider', () => {
     should(Provider).not.be.null;
   });
 
+  describe('#getName', () => {
+    it('should be defined and be a function', () => {
+      should(Provider.getName).not.be.null;
+      should(Provider.getName).be.a.Function;
+    });
+
+    describe('#getName()', () => {
+      it('should be sync return a string', () => {
+        should(Provider.getName()).be.a.string;
+      });
+    });
+  });
+
   describe('#init', () => {
     it('should be defined and be a function', () => {
       should(Provider.init).not.be.null;

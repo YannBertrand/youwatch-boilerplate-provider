@@ -4,6 +4,10 @@ module.exports = (() => {
 
   let config;
 
+  function getName() {
+    return 'boilerplate';
+  }
+
   function init(callback, _config) {
     utils.testCallback(callback);
     utils.returnCallbackError(utils.testObject('config', _config));
@@ -49,6 +53,7 @@ module.exports = (() => {
   }
 
   return {
+    getName,
     init,
     refreshSubscriptions,
     refreshVideos,
