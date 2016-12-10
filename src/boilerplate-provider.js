@@ -8,11 +8,12 @@ module.exports = (() => {
     return 'boilerplate';
   }
 
-  function init(callback, _config) {
+  function init(callback, options) {
     utils.testCallback(callback);
-    utils.returnCallbackError(utils.testObject('config', _config));
+    utils.returnCallbackError(utils.testObject('options', options));
+    utils.returnCallbackError(utils.testObject('options.config', options.config));
 
-    config = _config;
+    config = options.config;
 
     return callback();
   }

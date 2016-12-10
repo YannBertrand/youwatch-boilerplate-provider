@@ -33,11 +33,15 @@ describe('Provider', () => {
       });
     });
 
-    describe('#init(callback, config)', () => {
+    describe('#init(callback, options)', () => {
       it('should call the callback when arguments are present', (done) => {
-        const config = { get: () => {}, set: () => {} };
+        const options = {
+          config: {
+            get: () => {}, set: () => {}
+          }
+        };
 
-        Provider.init(done, config);
+        Provider.init(done, options);
       });
     });
   });
