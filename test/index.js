@@ -18,7 +18,7 @@ describe('Provider', () => {
       it('should be sync return a string', () => {
         const name = Provider.getName();
 
-        should(name).be.a.string;
+        should(name).be.a.String();
         should(name).not.containEql('.');
       });
     });
@@ -34,7 +34,7 @@ describe('Provider', () => {
       it('should be sync return a string', () => {
         const name = Provider.getConfigPrefix();
 
-        should(name).be.a.string;
+        should(name).be.a.String();
         should(name).startWith('providers.');
       });
     });
