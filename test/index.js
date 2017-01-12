@@ -5,12 +5,12 @@ const Provider = require('../src/index');
 describe('Provider', () => {
 
   it('should exists', () => {
-    should(Provider).not.be.null;
+    should.exist(Provider);
   });
 
   describe('#getName', () => {
     it('should be defined and be a function', () => {
-      should(Provider.getName).not.be.null;
+      should.exist(Provider.getName);
       should(Provider.getName).be.a.Function;
     });
 
@@ -26,7 +26,7 @@ describe('Provider', () => {
 
   describe('#getConfigPrefix', () => {
     it('should be defined and be a function', () => {
-      should(Provider.getConfigPrefix).not.be.null;
+      should.exist(Provider.getConfigPrefix);
       should(Provider.getConfigPrefix).be.a.Function;
     });
 
@@ -42,7 +42,7 @@ describe('Provider', () => {
 
   describe('#init', () => {
     it('should be defined and be a function', () => {
-      should(Provider.init).not.be.null;
+      should.exist(Provider.init);
       should(Provider.init).be.a.Function;
     });
 
@@ -72,7 +72,7 @@ describe('Provider', () => {
 
   describe('#refreshSubscriptions', () => {
     it('should be defined and be a function', () => {
-      should(Provider.refreshSubscriptions).not.be.null;
+      should.exist(Provider.refreshSubscriptions);
       should(Provider.refreshSubscriptions).be.a.Function;
     });
 
@@ -85,7 +85,7 @@ describe('Provider', () => {
     describe('#refreshSubscriptions(callback)', () => {
       it('should call the callback', (done) => {
         Provider.refreshSubscriptions((err) => {
-          should(err).be.undefined;
+          should.not.exist(err);
           done();
         });
       });
@@ -94,7 +94,7 @@ describe('Provider', () => {
 
   describe('#refreshVideos', () => {
     it('should be defined and be a function', () => {
-      should(Provider.refreshVideos).not.be.null;
+      should.exist(Provider.refreshVideos);
       should(Provider.refreshVideos).be.a.Function;
     });
 
@@ -107,7 +107,7 @@ describe('Provider', () => {
     describe('#refreshVideos(callback)', () => {
       it('should call the callback', (done) => {
         Provider.refreshVideos((err) => {
-          should(err).be.undefined;
+          should.not.exist(err);
           done();
         });
       });
@@ -116,7 +116,7 @@ describe('Provider', () => {
 
   describe('#refreshVideos', () => {
     it('should be defined and be a function', () => {
-      should(Provider.refreshVideos).not.be.null;
+      should.exist(Provider.refreshVideos);
       should(Provider.refreshVideos).be.a.Function;
     });
 
@@ -129,7 +129,7 @@ describe('Provider', () => {
     describe('#refreshVideos(callback)', () => {
       it('should call the callback', (done) => {
         Provider.refreshVideos((err) => {
-          should(err).be.undefined;
+          should.not.exist(err);
           done();
         });
       });
@@ -139,7 +139,7 @@ describe('Provider', () => {
       it('should accept an optional channel parameter', (done) => {
         const channel = { id: 1 };
         Provider.refreshVideos((err) => {
-          should(err).be.undefined;
+          should.not.exist(err);
           done();
         }, channel);
       });
@@ -148,7 +148,7 @@ describe('Provider', () => {
 
   describe('#getVideos', () => {
     it('should be defined and be a function', () => {
-      should(Provider.getVideos).not.be.null;
+      should.exist(Provider.getVideos);
       should(Provider.getVideos).be.a.Function;
     });
 
@@ -161,7 +161,7 @@ describe('Provider', () => {
     describe('#getVideos(callback)', () => {
       it('should call the callback', (done) => {
         Provider.getVideos((err) => {
-          should(err).be.undefined;
+          should.not.exist(err);
           done();
         });
       });
@@ -172,7 +172,7 @@ describe('Provider', () => {
         const channel = { id: 1 };
 
         Provider.getVideos((err) => {
-          should(err).be.undefined;
+          should.not.exist(err);
           done();
         }, channel);
       });
@@ -181,7 +181,7 @@ describe('Provider', () => {
 
   describe('#getOlderVideos', () => {
     it('should be defined and be a function', () => {
-      should(Provider.getOlderVideos).not.be.null;
+      should.exist(Provider.getOlderVideos);
       should(Provider.getOlderVideos).be.a.Function;
     });
 
@@ -194,7 +194,7 @@ describe('Provider', () => {
     describe('#getOlderVideos(callback)', () => {
       it('should call the callback', (done) => {
         Provider.getOlderVideos((err) => {
-          should(err).be.undefined;
+          should.not.exist(err);
           done();
         });
       });
@@ -205,7 +205,7 @@ describe('Provider', () => {
         const video = { id: 1 };
 
         Provider.getOlderVideos((err) => {
-          should(err).be.undefined;
+          should.not.exist(err);
           done();
         }, video);
       });
@@ -214,7 +214,7 @@ describe('Provider', () => {
 
   describe('#videoProgress', () => {
     it('should be defined and be a function', () => {
-      should(Provider.videoProgress).not.be.null;
+      should.exist(Provider.videoProgress);
       should(Provider.videoProgress).be.a.Function;
     });
 
@@ -245,7 +245,7 @@ describe('Provider', () => {
         const time = '08:00';
 
         Provider.videoProgress((err) => {
-          should(err).be.undefined;
+          should.not.exist(err);
           done();
         }, video, time);
       });
