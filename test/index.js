@@ -11,7 +11,7 @@ describe('Provider', () => {
   describe('#getName', () => {
     it('should be defined and be a function', () => {
       should.exist(Provider.getName);
-      should(Provider.getName).be.a.Function;
+      should(Provider.getName).be.a.Function();
     });
 
     describe('#getName()', () => {
@@ -27,7 +27,7 @@ describe('Provider', () => {
   describe('#getConfigPrefix', () => {
     it('should be defined and be a function', () => {
       should.exist(Provider.getConfigPrefix);
-      should(Provider.getConfigPrefix).be.a.Function;
+      should(Provider.getConfigPrefix).be.a.Function();
     });
 
     describe('#getConfigPrefix()', () => {
@@ -43,7 +43,7 @@ describe('Provider', () => {
   describe('#init', () => {
     it('should be defined and be a function', () => {
       should.exist(Provider.init);
-      should(Provider.init).be.a.Function;
+      should(Provider.init).be.a.Function();
     });
 
     describe('#init()', () => {
@@ -73,7 +73,7 @@ describe('Provider', () => {
   describe('#refreshSubscriptions', () => {
     it('should be defined and be a function', () => {
       should.exist(Provider.refreshSubscriptions);
-      should(Provider.refreshSubscriptions).be.a.Function;
+      should(Provider.refreshSubscriptions).be.a.Function();
     });
 
     describe('#refreshSubscriptions()', () => {
@@ -95,7 +95,7 @@ describe('Provider', () => {
   describe('#refreshVideos', () => {
     it('should be defined and be a function', () => {
       should.exist(Provider.refreshVideos);
-      should(Provider.refreshVideos).be.a.Function;
+      should(Provider.refreshVideos).be.a.Function();
     });
 
     describe('#refreshVideos()', () => {
@@ -117,7 +117,7 @@ describe('Provider', () => {
   describe('#refreshVideos', () => {
     it('should be defined and be a function', () => {
       should.exist(Provider.refreshVideos);
-      should(Provider.refreshVideos).be.a.Function;
+      should(Provider.refreshVideos).be.a.Function();
     });
 
     describe('#refreshVideos()', () => {
@@ -149,7 +149,7 @@ describe('Provider', () => {
   describe('#getVideos', () => {
     it('should be defined and be a function', () => {
       should.exist(Provider.getVideos);
-      should(Provider.getVideos).be.a.Function;
+      should(Provider.getVideos).be.a.Function();
     });
 
     describe('#getVideos()', () => {
@@ -182,7 +182,7 @@ describe('Provider', () => {
   describe('#getOlderVideos', () => {
     it('should be defined and be a function', () => {
       should.exist(Provider.getOlderVideos);
-      should(Provider.getOlderVideos).be.a.Function;
+      should(Provider.getOlderVideos).be.a.Function();
     });
 
     describe('#getOlderVideos()', () => {
@@ -215,7 +215,7 @@ describe('Provider', () => {
   describe('#videoProgress', () => {
     it('should be defined and be a function', () => {
       should.exist(Provider.videoProgress);
-      should(Provider.videoProgress).be.a.Function;
+      should(Provider.videoProgress).be.a.Function();
     });
 
     describe('#videoProgress()', () => {
