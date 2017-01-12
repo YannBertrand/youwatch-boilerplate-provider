@@ -26,6 +26,10 @@
     "should": "^11.1.1"
   },
   "dependencies": {
-    "lodash": "^4.17.2"
+    "lodash.iserror": "^3.1.1",
+    "lodash.isfunction": "^3.0.8",
+    "lodash.isplainobject": "^4.0.6",
+    "lodash.isstring": "^4.0.1",
+    "lodash.isundefined": "^3.0.1"
   }
 }
